@@ -1,10 +1,10 @@
 <template>
   <h1>{{ title }}</h1>
-  <p>Welcome</p>
+  <p>Welcome...</p>
   <input type="text" ref="name">
   <button @click="handleClick">Click me</button>
   <div v-if="showModal">
-    <Modal :header="header" :text="text" theme="sale"/>
+    <Modal :header="header" :text="text" theme="sale" @close="toggleModal" />
   </div>
   <div class="handle-modal">
     <button @click="toggleModal">Open modal</button>
