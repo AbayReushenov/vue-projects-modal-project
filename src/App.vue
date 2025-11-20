@@ -4,23 +4,13 @@
   <input type="text" ref="name">
   <button @click="handleClick">Click me</button>
   <div v-if="showModal">
-    <Modal :header="header" :text="text" theme="sale" @close="toggleModal" />
+    <Modal theme="sale" @close="toggleModal" />
   </div>
   <div class="handle-modal">
     <button @click.alt="toggleModal">Open modal (alt + click)</button>
-    <!-- <button @click.shift="toggleModal">Open modal (shift + click)</button> -->
-    <!-- <button @click.right="toggleModal">Open modal (right click)</button> -->
   </div>
 </template>
-<!--
-В компоненте App.vue:
-При использовании компонента Modal есть обработчик @close="toggleModal".
-Когда в Modal происходит событие close, вызывается метод toggleModal в родительском компоненте.
 
-Родительский компонент App ловит это событие Modal через @close и выполняет метод toggleModal.
-toggleModal переключает значение showModal между true и false, что управляет отображением модального окна.
-
--->
 <script>
 import Modal from './components/Modal.vue';
 
